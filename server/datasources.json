@@ -1,6 +1,21 @@
 {
-  "db": {
-    "name": "db",
-    "connector": "memory"
-  }
+    "db": {
+        "name": "db",
+        "connector": "memory"
+    },
+    "mysql": {
+        "host": "localhost",
+        "port": 3306,
+        "database": "nha_dat_viet",
+        "username": "root",
+        "password": "",
+        "name": "mysql",
+        "connector": "mysql"
+    },
+    "localfile": {
+        "name": "localfile",
+        "connector": "loopback-component-storage",
+        "provider": "filesystem",
+        "root": "./server/storage"
+    }
 }

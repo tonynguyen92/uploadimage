@@ -1,0 +1,42 @@
+{
+    "name": "email",
+    "description": "Save emails on system",
+    "base": "PersistedModel",
+    "idInjection": false,
+    "strict": true,
+    "options": {
+        "validateUpsert": true,
+        "mysql": {
+            "table": "oh_emails"
+        }
+    },
+    "properties": {
+
+        "to": {
+            "type": "String",
+            "required": true
+        },
+        "title": {
+            "type": "String",
+            "required": true
+        },
+        "content": {
+            "type": "Text",
+            "required": true
+        },
+        "userId": {
+            "type": "number",
+            "required": true
+        },
+        "userType": {
+            "type": "String",
+            "required": true
+        },
+        "isSent": {
+            "type": "Boolean",
+            "default": true
+        },
+        "modified": "Number",
+        "created": "Number"
+    }
+}

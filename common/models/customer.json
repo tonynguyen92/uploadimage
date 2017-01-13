@@ -1,0 +1,67 @@
+{
+    "name": "Customer",
+    "base": "User",
+    "idInjection": true,
+    "options": {
+        "validateUpsert": true,
+        "mysql": {
+            "table": "oh_customers"
+        }
+    },
+    "properties": {
+        "avatar": {
+            "type": "String",
+            "default": "https://s3-us-west-1.amazonaws.com/us-resource-west/static/default_user_150x150.png"
+        },
+        "modified": {
+            "type": "Number"
+        },
+        "created": {
+            "type": "Number"
+        },
+        "fullname": {
+            "type": "String"
+        },
+        "isFacebook": {
+            "type": "Boolean"
+        },
+        "fbToken": {
+            "type": "String"
+        },
+        "isVerified": {
+            "type": "Boolean",
+            "default": false
+        },
+        "resetPasswordToken": {
+            "type": "String"
+        }
+    },
+    "validations": [],
+    "relations": {},
+    "acls": [{
+        "property": "confirm_email",
+        "accessType": "*",
+        "principalType": "ROLE",
+        "principalId": "$everyone",
+        "permission": "ALLOW"
+    }, {
+        "property": "login_facebook",
+        "accessType": "*",
+        "principalType": "ROLE",
+        "principalId": "$everyone",
+        "permission": "ALLOW"
+    }, {
+        "property": "forgot_password",
+        "accessType": "*",
+        "principalType": "ROLE",
+        "principalId": "$everyone",
+        "permission": "ALLOW"
+    }, {
+        "property": "change_password",
+        "accessType": "*",
+        "principalType": "ROLE",
+        "principalId": "$everyone",
+        "permission": "ALLOW"
+    }],
+    "methods": {}
+}

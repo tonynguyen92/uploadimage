@@ -1,0 +1,116 @@
+{
+    "name": "mls",
+    "description": "Mls's data is imported from MLS system",
+    "base": "PersistedModel",
+    "strict": true,
+    "options": {
+        "validateUpsert": true,
+        "mysql": {
+            "table": "oh_mls"
+        }
+    },
+    "properties": {
+        "yearBuilt": {
+            "type": "Number"
+        },
+        "type": {
+            "type": "String"
+        },
+        "bathrooms": {
+            "type": "Number"
+        },
+        "bedrooms": {
+            "type": "Number"
+        },
+        "area": {
+            "type": "Number",
+            "description": "Square footage"
+        },
+        "garageSpaces": {
+            "type": "Number",
+            "description": "Number of garage spaces"
+        },
+        "listPrice": {
+            "type": "Number"
+        },
+        "stories": {
+            "type": "Number"
+        },
+        "state": {
+            "type": "String"
+        },
+        "city": {
+            "type": "String"
+        },
+        "pool": {
+            "type": "String"
+        },
+        "lotSizeArea": {
+            "type": "Number"
+        },
+        "lotSizeAreaUnits": {
+            "type": "Number"
+        },
+        "lotSize": {
+            "type": "String"
+        },
+        "hoa": {
+            "type": "Number",
+            "dataType": "float"
+        },
+        "lng": {
+            "type": "Number",
+            "dataType": "float"
+        },
+        "lat": {
+            "type": "Number",
+            "dataType": "float"
+        },
+        "photos": {
+            "type": "String"
+        },
+        "startDate": {
+            "type": "Number"
+        },
+        "endDate": {
+            "type": "Number"
+        },
+        "openTime": {
+            "type": "Number"
+        },
+        "closeTime": {
+            "type": "Number"
+        },
+        "modified": {
+            "type": "Number"
+        },
+        "created": {
+            "type": "Number"
+        },
+        "agentId": {
+            "type": "Number"
+        },
+        "countView": {
+            "type": "Number",
+            "default": 0
+        },
+        "countFavourite": {
+            "type": "Number",
+            "default": 0
+        }
+    },
+    "validations": [],
+    "relations": {},
+    "acls": [{
+        "accessType": "*",
+        "principalType": "ROLE",
+        "principalId": "$unauthenticated",
+        "permission": "DENY"
+    }, {
+        "accessType": "*",
+        "principalType": "ROLE",
+        "principalId": "$authenticated",
+        "permission": "ALLOW"
+    }],
+    "methods": {}
+}
