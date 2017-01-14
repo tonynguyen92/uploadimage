@@ -1,7 +1,9 @@
 module.exports = function(Email) {
     Email.observe('before save', function updateTimestamp(ctx, next) {
         if (ctx.instance) {
-            ctx.instance.created = Math.floor(Date.now() / 1000);
+            if (!ctx.instance.id) {
+                ctx.instance.created = Math.floor(Date.now() / 1000);
+            }
             ctx.instance.modified = Math.floor(Date.now() / 1000);
         } else {
             ctx.data.modified = Math.floor(Date.now() / 1000);

@@ -5,7 +5,9 @@ var app = require('../../server/server');
 module.exports = function(Customer) {
     Customer.observe('before save', function updateTimestamp(ctx, next) {
         if (ctx.instance) {
-            ctx.instance.created = Math.floor(Date.now() / 1000);
+            if (!ctx.instance.id) {
+                ctx.instance.created = Math.floor(Date.now() / 1000);
+            }
             ctx.instance.modified = Math.floor(Date.now() / 1000);
             var md5 = require('md5');
             ctx.instance.verificationToken = md5(Date.now());
